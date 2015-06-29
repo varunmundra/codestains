@@ -2,7 +2,7 @@ require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
 require 'mina/rbenv'
-require 'mina/unicorn'  # for rbenv support. (http://rbenv.org)
+# require 'mina/unicorn'  # for rbenv support. (http://rbenv.org)
 # require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
 # Basic settings:
@@ -76,7 +76,7 @@ task :deploy => :environment do
  
     to :launch do
       # queue "restart codestains"
-     invoke :'unicorn:restart' 
+     # invoke :'unicorn:restart' 
     end
   end
 end
