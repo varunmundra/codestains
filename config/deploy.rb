@@ -1,7 +1,8 @@
 require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
-require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
+require 'mina/rbenv'
+require 'mina/unicorn'  # for rbenv support. (http://rbenv.org)
 # require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
 # Basic settings:
@@ -25,7 +26,8 @@ set :term_mode, nil
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'log']
+set :shared_paths, ['config/database.yml', 'log','tmp/sockets', 'tmp/pids']
+
 
 # Optional settings:
 #   set :user, 'foobar'    # Username in the server to SSH to.
