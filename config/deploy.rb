@@ -74,10 +74,10 @@ task :deploy => :environment do
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
  
-    # to :launch do
-    #   queue "restart codestains"
-      
-    # end
+    to :launch do
+      # queue "restart codestains"
+     invoke :'unicorn:restart' 
+    end
   end
 end
 
